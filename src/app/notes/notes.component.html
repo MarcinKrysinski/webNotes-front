@@ -1,1 +1,18 @@
 <p>notes works!</p>
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <div class="form-row" style="margin: 5rem" >
+
+        <div class="card" style="width: 18rem;" *ngFor="let note of notes" >
+          <div class="card-body">
+            <h5 class="card-title">{{note.creationTime | date: 'fullDate'}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{note.text.substring(0, 15)}}</h6>
+            <a (click)="updateNote(note.id)" class="note-link">change</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
