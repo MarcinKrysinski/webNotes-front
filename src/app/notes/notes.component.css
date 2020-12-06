@@ -1,0 +1,12 @@
+#textField{
+  border: InactiveBorder;
+  outline: none;
+}
+
+.card{
+  margin-left: auto;
+  margin-bottom: auto;
+}
+.card-body{
+  height: max-content;
+}
