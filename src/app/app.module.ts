@@ -6,6 +6,8 @@ import { NotesComponent } from './notes/notes.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
+import { NoteAddComponent } from './note-add/note-add.component';
+import {FormsModule} from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -28,13 +30,15 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     NotesComponent,
-    NoteDetailsComponent
+    NoteDetailsComponent,
+    NoteAddComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    RouterModule.forRoot(appRoutes)
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        RouterModule.forRoot(appRoutes),
+        FormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

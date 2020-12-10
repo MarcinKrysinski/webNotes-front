@@ -1,1 +1,16 @@
-<p>note-details works!</p>
+<div class="container">
+
+  <h3>Update Note</h3>
+  <form (ngSubmit) = "onSubmit()">
+    <div class="form-group">
+
+      <div class="form-group">
+        <label for="text">Text</label>
+        <textarea class="form-control" id = "text" [(ngModel)] = "note.text" name="text" rows="3"></textarea>
+      </div>
+    </div>
+
+    <div>Create date {{note.creationTime | date: 'fullDate' }}</div>
+    <button class="btn btn-success"  type="submit">Save</button>
+  </form>
+</div>

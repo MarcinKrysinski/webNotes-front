@@ -1,4 +1,3 @@
-<p>notes works!</p>
 <div class="main-content">
   <div class="section-content section-content-p30">
     <div class="container-fluid">
@@ -7,12 +6,14 @@
         <div class="card" style="width: 18rem;" *ngFor="let note of notes">
           <div class="card-body">
             <h5 class="card-title">{{note.creationTime | date: 'fullDate'}}</h5>
-<!--            <h6 class="card-subtitle mb-2 text-muted">{{note.text.substring(0, 15)}}</h6>-->
-            <div id="textarea" contenteditable>{{note.text.substring(0, 15)}}</div>
-            <a (click)="updateNote(note.id)" class="note-link">update</a>
+            <div class="form-group">
+              <textarea class="form-control" id = "text" [(ngModel)] = "note.text" name="text" rows="3"></textarea>
+            </div>
+            <a (click)="updateNote(note.id)" class="btn btn-primary">update</a>
+            <button (click)="deleteNote(note.id)" class="btn btn-danger" >Delete</button>
+
           </div>
         </div>
-
       </div>
     </div>
   </div>

@@ -25,8 +25,8 @@ export class ApiService {
     return this.http.post<Note>(this.BASE_URL, note);
   }
 
-  updateNote(note: Note): Observable<Note> {
-    return this.http.put<Note>(this.BASE_URL, note);
+  updateNote(id: number, note: Note): Observable<Note> {
+    return this.http.put<Note>(`${this.BASE_URL}/${id}`, note);
   }
 
   deleteNote(id: number): Observable<any> {
