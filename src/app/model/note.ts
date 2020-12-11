@@ -3,4 +3,7 @@ export class Note {
   text: string;
   creationTime: string;
 
+  constructor() {
+    this.creationTime = new Date().toString();
+  }
 }
