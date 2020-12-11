@@ -6,8 +6,8 @@ import { NotesComponent } from './notes/notes.component';
 import { NoteDetailsComponent } from './note-details/note-details.component';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import { NoteAddComponent } from './note-add/note-add.component';
 import {FormsModule} from '@angular/forms';
+import { CreateNoteComponent } from './create-note/create-note.component';
 
 const appRoutes: Routes = [
   {
@@ -23,6 +23,10 @@ const appRoutes: Routes = [
   {
     path: 'note-details/:id',
     component: NoteDetailsComponent
+  },
+  {
+    path: 'create-note',
+    component: CreateNoteComponent
   }
 ];
 
@@ -31,7 +35,7 @@ const appRoutes: Routes = [
     AppComponent,
     NotesComponent,
     NoteDetailsComponent,
-    NoteAddComponent
+    CreateNoteComponent
   ],
     imports: [
         BrowserModule,

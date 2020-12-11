@@ -1,0 +1,13 @@
+.navbar{
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 7;
+
+}
+
+#logo{
+  color: whitesmoke;
+  margin-right: 1rem;
+}

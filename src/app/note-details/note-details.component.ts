@@ -13,7 +13,7 @@ export class NoteDetailsComponent implements OnInit {
 
   id: number;
   note: Note = new Note();
-  constructor(private apiService: ApiService, private route: ActivatedRoute, private rout: Router) { }
+  constructor(private apiService: ApiService, private route: ActivatedRoute, private location: Location) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params.id;
@@ -26,20 +26,12 @@ export class NoteDetailsComponent implements OnInit {
     });
   }
 
-
-  routTo(id: number): void{
-    this.rout.navigate(['update-note', id]);
-  }
-  routToList(): void{
-    this.rout.navigate(['notes']);
-  }
-
   onSubmit(): void {
     this.apiService.updateNote(this.id, this.note).subscribe( data => {
     }, error => {
       console.log(error);
     });
-    this.routTo(this.id);
+    this.location.back();
   }
 
   remove(): void {
@@ -47,6 +39,6 @@ export class NoteDetailsComponent implements OnInit {
     }, error => {
       console.log(error);
     });
-    this.routToList();
+    this.location.back();
   }
 }
